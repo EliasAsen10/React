@@ -1,9 +1,8 @@
-import React from 'react'
-
-type Props = {}
-
-const Notfound = (props: Props) => {
-  return (
-    <div>We have a problem</div>
-  )
+export default function NotFound() {
+    return (
+        <div>
+            <h2>404 - Page Not Found</h2>
+            <p>Could not find requested resource</p>
+        </div>
+    )
 }
