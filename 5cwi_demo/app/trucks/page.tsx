@@ -1,8 +1,5 @@
-import React from "react";
 import TruckList from "../components/ui/truck/truckList";
 import { Truck } from "../lib/types/types";
-
-type Props = {};
 
 const trucks: Truck[] = [
   {
@@ -34,7 +31,7 @@ const trucks: Truck[] = [
   },
 ];
 
-export default function Trucks({}: Props) {
+export default function Trucks() {
   return (
     <div className="text-gray-900">
       <TruckList trucks={trucks} />

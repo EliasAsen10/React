@@ -1,9 +1,6 @@
 import React from "react";
-
 import CarList from "../components/ui/car/carList";
 import { Car } from "../lib/types/types";
-
-type Props = {};
 
 const cars: Car[] = [
   {
@@ -35,7 +32,7 @@ const cars: Car[] = [
   },
 ];
 
-export default function Cars({}: Props) {
+export default function Cars() {
   return (
     <div className="text-gray-900">
       <CarList cars={cars} />
