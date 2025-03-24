@@ -6,7 +6,7 @@ import Cart from "../components/ui/lego/cart";
 
 const legoSets: LegoSet[] = [
   {
-    id: 1,
+    id: "1",
     name: "Millennium Falcon",
     price: 49.99,
     pieces: 1000,
@@ -14,7 +14,7 @@ const legoSets: LegoSet[] = [
     category: "Star Wars",
   },
   {
-    id: 2,
+    id: "2",
     name: "Batmobile",
     price: 29.99,
     pieces: 750,
@@ -22,7 +22,7 @@ const legoSets: LegoSet[] = [
     category: "DC",
   },
   {
-    id: 3,
+    id: "3",
     name: "Death Star",
     price: 89.99,
     pieces: 2000,

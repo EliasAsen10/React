@@ -24,6 +24,9 @@ export type CartItem = {
     name: string;
     price: number;
     quantity: number;
+    image: string;
+    pieces: number;
+    category: string;
 };
 
 export type LegoSet = {
