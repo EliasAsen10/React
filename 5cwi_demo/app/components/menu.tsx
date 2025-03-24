@@ -28,7 +28,7 @@ export default function Menu() {
               className="p-2 hover:bg-gray-100 rounded-2xl text-gray-900"
               href="/lego"
             >
-              Lego Store
+              Buy a Commiter
             </Link>
           </li>
         </div>
