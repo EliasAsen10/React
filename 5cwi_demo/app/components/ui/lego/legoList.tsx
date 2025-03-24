@@ -1,7 +1,7 @@
 "use client";
 import { LegoSet } from "@/app/lib/types/types";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {
   sets: LegoSet[];
@@ -9,6 +9,14 @@ type Props = {
 };
 
 const LegoList = ({ sets, onAddToCart }: Props) => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleAddToCart = (set: LegoSet) => {
+    onAddToCart(set);
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 3000);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {sets.map((set) => (
@@ -24,8 +32,9 @@ const LegoList = ({ sets, onAddToCart }: Props) => {
               className="object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            <div className="absolute top-2 right-2 bg-white text-black px-3 py-1 rounded-full font-semibold">
-              €{set.price}
+            <div className="absolute top-2 right-2 bg-white text-black px-3 py-1 rounded-full font-semibold flex items-center gap-2">
+              <span className="line-through text-gray-500">100€</span>
+              <span className="text-green-500 animate-pulse">10€</span>
             </div>
           </div>
           <div className="p-6 bg-gradient-to-b from-gray-900 to-black">
@@ -41,7 +50,7 @@ const LegoList = ({ sets, onAddToCart }: Props) => {
               </p>
             </div>
             <button
-              onClick={() => onAddToCart(set)}
+              onClick={() => handleAddToCart(set)}
               className="mt-4 w-full bg-white hover:bg-gray-200 text-black px-6 py-3 rounded-xl font-bold transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
               Add to Cart
@@ -49,6 +58,13 @@ const LegoList = ({ sets, onAddToCart }: Props) => {
           </div>
         </div>
       ))}
+      {showMessage && (
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none">
+          <div className="bg-green-500 text-white text-2xl p-6 rounded-xl shadow-2xl animate-bounce">
+            Glückwunsch! Sie haben Nate gekauft! 🎉
+          </div>
+        </div>
+      )}
     </div>
   );
 };

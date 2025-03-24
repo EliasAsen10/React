@@ -8,7 +8,7 @@ const legoSets: LegoSet[] = [
   {
     id: "2",
     name: "Nate",
-    price: 29.99,
+    price: 10,
     pieces: 100,
     image: "/images/lego/batmobile.jpg",
     category: "Buy Commiter",
