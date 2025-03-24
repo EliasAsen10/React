@@ -16,3 +16,12 @@ export type Truck = {
         type: string;
     }
 }
+
+
+// Add the CartItem type export
+export type CartItem = {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+};
